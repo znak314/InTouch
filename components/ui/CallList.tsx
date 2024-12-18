@@ -94,7 +94,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
               icon={
                 type === 'ended'
                   ? '/icons/Previous.svg'
-                  : type === 'Upcoming'
+                  : type === 'upcoming'
                   ? '/icons/Upcoming.svg'
                   : '/icons/video.svg'
               }
