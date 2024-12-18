@@ -93,10 +93,10 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
               key={(meeting as Call).id}
               icon={
                 type === 'ended'
-                  ? '/icons/previous.svg'
-                  : type === 'upcoming'
-                  ? '/icons/upcoming.svg'
-                  : '/icons/recordings.svg'
+                  ? '/icons/Previous.svg'
+                  : type === 'Upcoming'
+                  ? '/icons/Upcoming.svg'
+                  : '/icons/video.svg'
               }
               title={
                 (meeting as Call).state?.custom?.description ||
