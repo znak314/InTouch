@@ -5,10 +5,20 @@ import MobileNav from './MobileNav'
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 const Navbar: React.FC = () => {
-  // Get current date and time
   const now = new Date();
-  const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  const date = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' }).format(now);
+
+  const time = now.toLocaleTimeString('en-US', { 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    hourCycle: 'h23' // 24-годинний формат
+  });
+  
+  // Форматування дати англійською
+  const date = new Intl.DateTimeFormat('en-US', { 
+    weekday: 'long', 
+    month: 'long', 
+    day: 'numeric' 
+  }).format(now);
 
   return (
     <nav className='flex-between fixed z-50 w-full bg-[#c8d9eb] px-6 py-4 lg:px-10 rounded-b-lg'>
