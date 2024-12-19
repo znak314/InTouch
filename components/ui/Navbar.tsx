@@ -7,7 +7,7 @@ import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 const Navbar: React.FC = () => {
   const now = new Date();
 
-  const time = now.toLocaleTimeString('en-US', { 
+  const time = now.toLocaleTimeString('uk-UA', { 
     hour: '2-digit', 
     minute: '2-digit', 
     hourCycle: 'h23' // 24-годинний формат
