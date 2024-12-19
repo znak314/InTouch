@@ -105,8 +105,8 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
               }
               date={
                 type === 'ended'
-                  ? `Ended at: ${ (meeting as Call).state?.endedAt?.toLocaleString() }`
-                  : `Starts at: ${ (meeting as Call).state?.startsAt?.toLocaleString() || (meeting as CallRecording).start_time?.toLocaleString() }`
+                ? `Ended at: ${(meeting as Call).state?.endedAt?.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false })}`
+                : `Starts at: ${(meeting as Call).state?.startsAt?.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }) || (meeting as CallRecording).start_time?.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false })}`                                   
               }                      
               isPreviousMeeting={type === 'ended'}
               link={
