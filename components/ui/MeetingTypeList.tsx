@@ -26,7 +26,8 @@ const MeetingTypeList = () => {
 
     const [callDetails, setCallDetails] = useState<Call>()
     const { toast } = useToast()
-
+    let meetingLink = ""
+    
     const createMeeting = () => {
         if(!client || !user) return;
         
@@ -58,6 +59,7 @@ const MeetingTypeList = () => {
 
             if (!values.description) {
                 router.push(`/meeting/${call.id}`);
+                meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${call.id}`
             }
             
             toast({title: "Meeting created"})
@@ -67,7 +69,7 @@ const MeetingTypeList = () => {
         }
       };
 
-      const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
+      //const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
 
     return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-2 min-h-[80vh] place-items-center">
@@ -130,6 +132,7 @@ const MeetingTypeList = () => {
                 onClose={() => setMeetingState(undefined)}
                 title="Meeting scheduled!"
                 className="text-center"
+                //handleClick={() => {navigator.clipboard.writeText(meetingLink); toast({title: 'Link copied!'})}}
                 handleClick={() => {navigator.clipboard.writeText(meetingLink); toast({title: 'Link copied!'})}}
                 image="/icons/created_meeting.svg"
                 buttonText = "Copy Meeting link"
