@@ -10,7 +10,8 @@ const Navbar: React.FC = () => {
   const time = now.toLocaleTimeString('uk-UA', { 
     hour: '2-digit', 
     minute: '2-digit', 
-    hourCycle: 'h23' // 24-годинний формат
+    hourCycle: 'h23', // 24-годинний формат
+    timeZone: 'Europe/Kiev' // Вказуємо часову зону
   });
   
   // Форматування дати англійською
